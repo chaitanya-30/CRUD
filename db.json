@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "ram",
+      "email": "ram@gmail.com",
+      "mobile": "1312425346",
+      "subject": "eng"
+    },
+    {
+      "name": "dilip",
+      "email": "dilip@gmail.com",
+      "mobile": "42532532632",
+      "subject": "science",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "ramesh",
+      "email": "ram@yahoo.com",
+      "mobile": "2141525235325",
+      "subject": "electrical"
+    },
+    {
+      "id": 5,
+      "name": "rajesh",
+      "email": "raj@gmail.com",
+      "mobile": "12421532634",
+      "subject": "marathi"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

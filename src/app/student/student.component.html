@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <nav class="navbar navbar-dark bg-info  text-center">
+            <h3>Students DashBoard</h3>
+            <button type="button" class="btn btn-primary ml-5" (click)="openModal()">Add Students</button>
+            <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+                 <div class="modal-dialog" role="document">
+                       <div class="modal-content">
+                             <div class="modal-header">
+                                   <h4 class="modal-title">Student Information</h4>
+                                   <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+                                 </div>
+                        <div class="modal-body">
+                            <form [formGroup]="formvalue" (ngSubmit)="poststudentdetails(formvalue.value)">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" formControlName="name" >
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">Email</label>
+                                  <input type="email"  class="form-control"  formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Mobile No:</label>
+                                    <input type="text"  class="form-control"  formControlName="mobile">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" class="form-control"  formControlName="subject" >
+                                  </div>
+                              </form>
+                                 </div>
+                             <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" *ngIf="showAddbutton" (click)="poststudentdetails(formvalue.value)">Add</button>
+                                   <button type="button" class="btn btn-primary" (click)="onCloseHandled()">Close</button>
+                                   <button type="button" class="btn btn-primary" *ngIf="showUpdateButton" (click)="updatestudentdetails()">Update</button>
+                                 </div>
+                    </div>
+                     </div>
+         </div>
+        </nav>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID NO</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Subject</th>
+
+<th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stu of studentdata">
+                    <td>{{stu.id}}</td>
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.email}}</td>
+                    <td>{{stu.mobile}}</td>
+                    <td>{{stu.subject}}</td>
+                    <td><button class="btn btn-primary" (click)="Editstudents(stu)">Edit</button>&nbsp;
+                      
+                        <button class="btn btn-danger" (click)="deletestudentdata(stu)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+
+
+
+        </table>
+       
+    </div>
+</div>
